@@ -17,7 +17,7 @@ module Faraday
       yield self if block_given?
     end
 
-    def_delegators :@logger, :debug, :info, :warn, :error, :fatal
+    def_delegators :@logger, :debug, :info, :warn, :error, :fatal, :level=
 
     def call(env)
       info "#{env.method} #{apply_filters(env.url.to_s)}"
